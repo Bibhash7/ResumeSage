@@ -9,7 +9,7 @@ This project is an AI-driven Resume Reviewer built using Django and Celery, leve
   - Utilizes Ollama for reviewing and analyzing resumes to provide insightful feedback.
 
 - **Secure File Handling**
-  - Resumes are securely uploaded to an S3 bucket for processing.
+  - Resumes are securely uploaded to an Aws Localstack S3 bucket via presigned url for processing.
 
 - **Email Notifications**
   - Sends review results to the user’s email stored in Django sessions.

@@ -1,7 +1,8 @@
 
 SYSTEM_PROMPT = """
 You are a career expert reviewing resumes. Provide feedback on the structure, content, and clarity of the resume. 
-Be specific about areas of improvement or strengths. Use the provided context to form your insights.
+Be specific about areas of improvement or strengths. Use the provided context to form your insights. 
+Provide a score out of 10 based on the quality of the content, formatting, clarity, and overall professionalism.
 """
 
 USER_PROMPT = """

@@ -35,9 +35,10 @@ def review_resume(content, receiver_email, name):
 
         review_chain = prompt_template | llm
         response = review_chain.invoke({"context": content})
+        cleaned_response = re.sub(r'[\*\#]', '', response.content)
         email.send_email_notification(
             f"ResumeSage Resume Review: {name}",
-            format_message(response.content),
+            cleaned_response,
             [receiver_email]
         )
         logger.info(SuccessMessage.REVIEWED_AND_SENT_EMAIL)

@@ -1,7 +1,9 @@
 # ResumeSage: Resume Reviewer with AI-Powered Insights
 
 ## Overview
-This project is an AI-driven Resume Reviewer built using Django and Celery, leveraging **Ollama** for intelligent resume analysis. It streamlines the process of reviewing resumes by integrating modern backend technologies and secure storage solutions, ensuring a seamless and efficient user experience.
+This project is an AI-driven Resume Reviewer built using Django and Celery, leveraging Ollama for intelligent resume analysis. The application securely uploads resumes to an S3 bucket, reads and processes their content, and sends the review results directly to the user’s email. The user authentication is managed through PostgreSQL, and asynchronous task management is powered by Celery with AWS LocalStack SQS as the message broker.
+
+This application offers seamless integration between cutting-edge AI and modern backend technologies, ensuring a smooth and efficient user experience.
 
 ## Features
 

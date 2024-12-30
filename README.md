@@ -31,6 +31,10 @@ This application offers seamless integration between cutting-edge AI and modern 
 - **Scalable Architecture**
   - Built with scalability in mind, leveraging distributed task queues and robust database support.
 
+## Screenshot
+**Home**
+[![Home-screen.png](https://i.postimg.cc/mrxR07kn/Home-screen.png)](https://postimg.cc/3kZPG4gj)
+
 ## Tech Stack
 
 - **Backend**: Django

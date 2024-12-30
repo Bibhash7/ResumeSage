@@ -24,6 +24,8 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+*.env
+*.log
 MANIFEST
 
 # PyInstaller
@@ -94,12 +96,6 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# UV
-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#uv.lock
-
 # poetry
 #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
@@ -126,6 +122,7 @@ celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
+.vscode
 
 # Environments
 .env
@@ -167,5 +164,55 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# PyPI configuration file
-.pypirc
+.DS_Store
+.huskyrc.json
+out
+log.log
+**/node_modules
+*.pyc
+*.vsix
+envVars.txt
+**/.vscode/.ropeproject/**
+**/testFiles/**/.cache/**
+*.noseids
+.nyc_output
+.vscode-test
+__pycache__
+npm-debug.log
+**/.mypy_cache/**
+!yarn.lock
+coverage/
+cucumber-report.json
+**/.vscode-test/**
+**/.vscode test/**
+**/.vscode-smoke/**
+**/.venv*/
+port.txt
+precommit.hook
+python_files/lib/**
+python_files/get-pip.py
+debug_coverage*/**
+languageServer/**
+languageServer.*/**
+bin/**
+obj/**
+.pytest_cache
+tmp/**
+.python-version
+.vs/
+test-results*.xml
+xunit-test-results.xml
+build/ci/performance/performance-results.json
+!build/
+debug*.log
+debugpy*.log
+pydevd*.log
+nodeLanguageServer/**
+nodeLanguageServer.*/**
+dist/**
+# translation files
+*.xlf
+package.nls.*.json
+l10n/
+python-env-tools/**
+.idea

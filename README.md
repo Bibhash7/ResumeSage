@@ -55,7 +55,7 @@ https://github.com/user-attachments/assets/59b08e02-0aed-4a83-9bb8-ade5b9cc2f8f
 
 - **Backend**: Django
 - **Task Queue**: Celery
-- **AI**: Ollama
+- **AI**: Ollama Gemma 2B
 - **Storage**: AWS S3
 - **Database**: PostgreSQL
 - **Broker**: AWS LocalStack SQS

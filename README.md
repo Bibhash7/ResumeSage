@@ -49,7 +49,7 @@ https://github.com/user-attachments/assets/59b08e02-0aed-4a83-9bb8-ade5b9cc2f8f
 
 **Email**
 
-[![mail.png](https://i.postimg.cc/fWtrYrMQ/mail.png)](https://postimg.cc/7b49kXCK)
+[![mail-2.png](https://i.postimg.cc/hGpcgJfn/mail-2.png)](https://postimg.cc/kV6kvgQY)
 
 ## Tech Stack
 

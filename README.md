@@ -56,7 +56,3 @@ This application offers seamless integration between cutting-edge AI and modern 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to update this README file based on your project’s specific requirements or enhancements!

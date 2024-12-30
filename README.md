@@ -33,7 +33,16 @@ This application offers seamless integration between cutting-edge AI and modern 
 
 ## Screenshot
 **Home**
+
 [![Home-screen.png](https://i.postimg.cc/mrxR07kn/Home-screen.png)](https://postimg.cc/3kZPG4gj)
+
+**Review Screen**
+
+[![Review-Screen.png](https://i.postimg.cc/0NQS6RPm/Review-Screen.png)](https://postimg.cc/QF2CPzBx)
+
+**Email**
+
+[![mail.png](https://i.postimg.cc/fWtrYrMQ/mail.png)](https://postimg.cc/7b49kXCK)
 
 ## Tech Stack
 

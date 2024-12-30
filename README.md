@@ -31,6 +31,13 @@ This application offers seamless integration between cutting-edge AI and modern 
 - **Scalable Architecture**
   - Built with scalability in mind, leveraging distributed task queues and robust database support.
 
+## Demo
+
+
+
+https://github.com/user-attachments/assets/59b08e02-0aed-4a83-9bb8-ade5b9cc2f8f
+
+
 ## Screenshot
 **Home**
 

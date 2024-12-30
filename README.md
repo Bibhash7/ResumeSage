@@ -5,6 +5,9 @@ This project is an AI-driven Resume Reviewer built using Django and Celery, leve
 
 This application offers seamless integration between cutting-edge AI and modern backend technologies, ensuring a smooth and efficient user experience.
 
+## System Architecture
+[![System-Diagram-Resume-Sage.png](https://i.postimg.cc/0QMgtQdf/System-Diagram-Resume-Sage.png)](https://postimg.cc/S2htRmP2)
+
 ## Features
 
 - **AI-Powered Resume Analysis**
@@ -28,6 +31,26 @@ This application offers seamless integration between cutting-edge AI and modern 
 - **Scalable Architecture**
   - Built with scalability in mind, leveraging distributed task queues and robust database support.
 
+## Demo
+
+
+
+https://github.com/user-attachments/assets/59b08e02-0aed-4a83-9bb8-ade5b9cc2f8f
+
+
+## Screenshot
+**Home**
+
+[![Home-screen.png](https://i.postimg.cc/mrxR07kn/Home-screen.png)](https://postimg.cc/3kZPG4gj)
+
+**Review Screen**
+
+[![Review-Screen.png](https://i.postimg.cc/0NQS6RPm/Review-Screen.png)](https://postimg.cc/QF2CPzBx)
+
+**Email**
+
+[![mail-2.png](https://i.postimg.cc/hGpcgJfn/mail-2.png)](https://postimg.cc/kV6kvgQY)
+
 ## Tech Stack
 
 - **Backend**: Django
@@ -40,7 +63,3 @@ This application offers seamless integration between cutting-edge AI and modern 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to update this README file based on your project’s specific requirements or enhancements!

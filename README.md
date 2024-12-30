@@ -5,6 +5,9 @@ This project is an AI-driven Resume Reviewer built using Django and Celery, leve
 
 This application offers seamless integration between cutting-edge AI and modern backend technologies, ensuring a smooth and efficient user experience.
 
+## System Architecture
+[![System-Diagram-Resume-Sage.png](https://i.postimg.cc/0QMgtQdf/System-Diagram-Resume-Sage.png)](https://postimg.cc/S2htRmP2)
+
 ## Features
 
 - **AI-Powered Resume Analysis**

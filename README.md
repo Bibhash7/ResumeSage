@@ -33,9 +33,7 @@ This application offers seamless integration between cutting-edge AI and modern 
 
 ## Demo
 
-
-
-https://github.com/user-attachments/assets/59b08e02-0aed-4a83-9bb8-ade5b9cc2f8f
+https://github.com/user-attachments/assets/f350657c-3495-4e35-abdf-f3b1cd0ad505
 
 
 ## Screenshot

@@ -70,7 +70,7 @@
 <div class="container">
     <a href="{% url 'sign_out' %}" class="signout-link">Sign Out</a>
     <h1>Upload Your Resume and Let Gemma, Our AI Expert, Review It for You!</h1>
-    <input type="file" id="fileInput" />
+    <input type="file" id="fileInput" accept=".pdf" required />
     <button onclick="uploadFile()">Upload and Review</button>
     <div id="status"></div>
 </div>

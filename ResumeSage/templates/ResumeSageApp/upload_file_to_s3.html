@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload to S3</title>
+    <style>
+        html, body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffffff, #87ceeb); /* White and gray gradient */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            width: 100%;
+            position: relative; /* To position the sign out link */
+        }
+
+        .signout-link {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .signout-link:hover {
+            color: #388E3C;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #status {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="{% url 'sign_out' %}" class="signout-link">Sign Out</a>
+    <h1>Upload Your Resume and Let Gemma, Our AI Expert, Review It for You!</h1>
+    <input type="file" id="fileInput" />
+    <button onclick="uploadFile()">Upload and Review</button>
+    <div id="status"></div>
+</div>
+
+<script>
+    async function uploadFile() {
+        const fileInput = document.getElementById('fileInput');
+        const file = fileInput.files[0];
+        const statusDiv = document.getElementById('status');
+
+        if (!file) {
+            statusDiv.innerText = "Please select a file.";
+            return;
+        }
+
+        try {
+            // Step 1: Get the presigned URL
+            const response = await fetch('/generate-upload-url/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ file_name: file.name })
+            });
+
+            if (!response.ok) {
+                statusDiv.innerText = "Error generating presigned URL.";
+                return;
+            }
+
+            const { presigned_url } = await response.json();
+
+            if (!presigned_url) {
+                statusDiv.innerText = "Failed to get presigned URL.";
+                return;
+            }
+
+            console.log("Presigned URL:", presigned_url);
+
+            // Step 2: Upload the file to S3 using the presigned URL
+            const uploadResponse = await fetch(presigned_url, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': file.type, // Use the correct MIME type
+                },
+                body: file
+            });
+
+            if (!uploadResponse.ok) {
+                const errorText = await uploadResponse.text();
+                console.error("S3 upload error:", errorText);
+                statusDiv.innerText = "Error uploading file.";
+            } else {
+                statusDiv.innerText = "File uploaded successfully!";
+
+                // Step 3: After successful upload, call the review-resume API
+                const reviewResponse = await fetch('/review-resume/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ file_name: file.name }) // You can pass additional data here if necessary
+                });
+
+                if (reviewResponse.ok) {
+                    statusDiv.innerText = "Resume review in progress. You will be notified by email shortly.";
+                } else {
+                    statusDiv.innerText = "Error initiating the resume review.";
+                }
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            statusDiv.innerText = "An error occurred.";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: gresau/localstack-persist
+    container_name: localstack_dtq_resumesage
+    environment:
+      - DATA_DIR=/var/lib/localstack/new_data  # Unique directory for persistence
+      - PERSISTENCE=true                      # Enable persistent storage
+    volumes:
+      - localstack_data:/var/lib/localstack/new_data  # Persistent data storage with a unique path
+    ports:
+      - "4566:4566"
+      - "4571:4571"
+
+volumes:
+  localstack_data:
+    name: localstack_data_resumesage  # Unique volume name to avoid conflict with other projects
+    driver: local

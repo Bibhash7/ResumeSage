@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        html, body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffffff, #87ceeb); /* White and gray gradient */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #4CAF50;
+            margin-bottom: 30px;
+            text-transform: capitalize;
+        }
+
+        .form-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .form-group input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #ffffff;
+            background-color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        .auth-link-btn {
+            padding: 12px 24px;
+            color: #ffffff;
+            background-color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .auth-link-btn:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+        }
+
+        footer {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1><u>Sign Up</u></h1>
+    <form method="POST" action="{% url 'sign_up' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Full Name:</label>
+            <input type="full_name" id="full_name" name="full_name" required>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    {% if not success %}
+        <div class="error-message">
+            {{ message }}
+        </div>
+    {% endif %}
+    <div class="auth-links" style="margin-top: 25px;">
+        <a href="{% url 'sign_in' %}" class="auth-link-btn">Sign In</a>
+        <a href="{% url 'home' %}" class="auth-link-btn">Home</a>
+    </div>
+</div>
+
+<footer>Designed and developed by Bibhash Ghosh</footer>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        let isValid = true;
+        let errorMessage = "";
+
+        if (/^\d/.test(email)) {
+            errorMessage += "Email should not start with a digit.\n";
+            isValid = false;
+        }
+        if (!email.includes('@')) {
+            errorMessage += "Email must contain '@'.\n";
+            isValid = false;
+        }
+        if (!email.endsWith('@gmail.com')) {
+            errorMessage += "Only gmail.com domain is allowed.\n";
+            isValid = false;
+        }
+
+        if (password.length < 8) {
+            errorMessage += "Password should be at least 8 characters long.\n";
+            isValid = false;
+        }
+
+        if (!isValid) {
+            event.preventDefault();
+            alert(errorMessage);
+        }
+    });
+</script>
+
+</body>
+</html>

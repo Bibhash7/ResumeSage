@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeSage</title>
+    <style>
+        html, body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffffff, #87ceeb); /* White and gray gradient */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #4CAF50;
+            margin-bottom: 30px;
+            text-transform: capitalize;
+        }
+
+        .description-box {
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 20px;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .auth-links {
+            margin-top: 25px;
+        }
+
+        .auth-link {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 12px 24px;
+            color: #ffffff;
+            background-color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .auth-link:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .linkedin-icon {
+            display: inline-block;
+            width: 30px; /* Adjust size as needed */
+            height: 30px; /* Adjust size as needed */
+            margin-left: 10px;
+            background: url('{% static "path/to/linkedin-logo.png" %}') no-repeat center center; /* Path to LinkedIn logo */
+            background-size: contain; /* Ensure the logo fits */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1><u>Welcome to ResumeSage</u></h1>
+    <div class="description-box">
+        A resume reviewer that uses GenAI to review resumes, providing insightful feedback and suggestions for improvement.
+    </div>
+
+    <div class="auth-links">
+        <a href="{% url 'sign_in' %}" class="auth-link">Sign In</a>
+        <a href="{% url 'sign_up' %}" class="auth-link">Sign Up</a>
+    </div>
+</div>
+
+<footer>
+    Designed and developed by Bibhash Ghosh
+    <a href="https://www.linkedin.com/in/your-profile/" class="linkedin-icon" target="_blank" title="LinkedIn Profile"></a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        html, body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffffff, #87ceeb); /* White and gray gradient */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #f44336; /* Change color to indicate an error */
+            margin-bottom: 30px;
+            text-transform: capitalize;
+        }
+
+        .error-message {
+            color: #f44336; /* Red color for error messages */
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #ffffff;
+            background-color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .home-btn:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1><u>This url is not supported. Please back to home.</u></h1>
+    <div class="error-message">
+        Oops! Something went wrong. Please try again later.
+    </div>
+    <a href="{% url 'home' %}" class="home-btn">Go to Home</a>
+</div>
+
+<footer>Designed and developed by Bibhash Ghosh</footer>
+
+</body>
+</html>

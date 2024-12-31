@@ -1,7 +1,7 @@
 # ResumeSage: Resume Reviewer with AI-Powered Insights
 
 ## Overview
-This project is an AI-driven Resume Reviewer built using Django and Celery, leveraging Ollama for intelligent resume analysis. The application securely uploads resumes to an S3 bucket, reads and processes their content, and sends the review results directly to the user’s email. The user authentication is managed through PostgreSQL, and asynchronous task management is powered by Celery with AWS LocalStack SQS as the message broker.
+This project is an AI-driven Resume Reviewer built using Django and Celery, leveraging Ollama for intelligent resume analysis. The application securely uploads resumes to an S3 bucket, reads and processes their content, and sends the review results directly to the user’s email. The user authentication is managed through PostgreSQL, and asynchronous task management is powered by Celery with AWS LocalStack SQS as the message broker. It that also provides score based on the structure, format and professionalism!
 
 This application offers seamless integration between cutting-edge AI and modern backend technologies, ensuring a smooth and efficient user experience.
 
@@ -33,9 +33,7 @@ This application offers seamless integration between cutting-edge AI and modern 
 
 ## Demo
 
-
-
-https://github.com/user-attachments/assets/59b08e02-0aed-4a83-9bb8-ade5b9cc2f8f
+https://github.com/user-attachments/assets/f350657c-3495-4e35-abdf-f3b1cd0ad505
 
 
 ## Screenshot
@@ -51,14 +49,19 @@ https://github.com/user-attachments/assets/59b08e02-0aed-4a83-9bb8-ade5b9cc2f8f
 
 [![mail-2.png](https://i.postimg.cc/hGpcgJfn/mail-2.png)](https://postimg.cc/kV6kvgQY)
 
+**LocalStack S3 Bucket Snapshot**
+
+[![S3-bucket-snapshot.png](https://i.postimg.cc/wBmS0Z77/S3-bucket-snapshot.png)](https://postimg.cc/B8JYvh50)
+
 ## Tech Stack
 
 - **Backend**: Django
 - **Task Queue**: Celery
-- **AI**: Ollama
-- **Storage**: AWS S3
+- **AI**: Ollama Gemma 2B
+- **Storage**: AWS LocalStack S3
 - **Database**: PostgreSQL
 - **Broker**: AWS LocalStack SQS
+- **Containerization**: Docker
 
 ## License
 

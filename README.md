@@ -49,14 +49,19 @@ https://github.com/user-attachments/assets/f350657c-3495-4e35-abdf-f3b1cd0ad505
 
 [![mail-2.png](https://i.postimg.cc/hGpcgJfn/mail-2.png)](https://postimg.cc/kV6kvgQY)
 
+**LocalStack S3 Bucket Snapshot**
+
+[![S3-bucket-snapshot.png](https://i.postimg.cc/wBmS0Z77/S3-bucket-snapshot.png)](https://postimg.cc/B8JYvh50)
+
 ## Tech Stack
 
 - **Backend**: Django
 - **Task Queue**: Celery
 - **AI**: Ollama Gemma 2B
-- **Storage**: AWS S3
+- **Storage**: AWS LocalStack S3
 - **Database**: PostgreSQL
 - **Broker**: AWS LocalStack SQS
+- **Containerization**: Docker
 
 ## License
 

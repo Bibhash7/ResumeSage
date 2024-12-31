@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from utils.aws_localstack_secret import get_db_secrets
 
 load_dotenv()
 
@@ -78,14 +79,16 @@ WSGI_APPLICATION = "ResumeSage.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+secrets = get_db_secrets("ResumeSage_DB_Secrets")
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get("DB_NAME"),
-        'USER': os.environ.get("DB_USER"),
-        'PASSWORD': os.environ.get("DB_PASSWORD"),
-        'HOST': os.environ.get("DB_HOST"),
-        'PORT': os.environ.get("DB_PORT"),
+        'NAME': secrets.get("db_name"),
+        'USER': secrets.get("db_username"),
+        'PASSWORD': secrets.get("db_password"),
+        'HOST': secrets.get("db_host"),
+        'PORT': secrets.get("db_port"),
     }
 }
 

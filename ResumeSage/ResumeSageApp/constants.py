@@ -27,7 +27,8 @@ class ErrorMessage:
     INVALID_FORMAT = {"success": False, "message": "Provide a string of alphabetic characters only, allowing underscores; comma, space or newline-separated."}
     PRESIGNED_URL_NOT_GENERATED = {"error": "Could not generate presigned URL."}
     REVIEW_OR_EMAIL_ERROR = "An error occurred while reviewing resume: {}"
-    TASK_QUEUE_ERROR = "An error occured in Celery Task Queue. {}"
+    TASK_QUEUE_ERROR = "An error occurred in Celery Task Queue. {}"
+    ERROR_FETCHING_SECRETS = "An error occurred while fetching secrets: {}"
 class SuccessMessage:
     USER_CREATED = {"success": True, "message": "User Created."}
     CONSTANT_CLASS_GENERATED ={"success": True,"message": "Constant class generated."}

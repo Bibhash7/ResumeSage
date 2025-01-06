@@ -12,7 +12,7 @@ This application offers seamless integration between cutting-edge AI and modern 
 
 - **AI-Powered Resume Analysis, Scoring and Interview Questions**
   - Utilizes Ollama Gemma2 LLM for reviewing and analyzing resumes to provide insightful feedback and overall score.
-  - It also generate 10 sample interview questions based on the resume.
+  - **Upd**: It also generate 10 sample interview questions based on the resume.
 
 - **Secure File Handling**
   - Resumes are securely uploaded to an Aws Localstack S3 bucket via presigned url for processing.

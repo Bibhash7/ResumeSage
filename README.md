@@ -48,9 +48,9 @@ https://github.com/user-attachments/assets/f350657c-3495-4e35-abdf-f3b1cd0ad505
 
 [![Review-Screen.png](https://i.postimg.cc/0NQS6RPm/Review-Screen.png)](https://postimg.cc/QF2CPzBx)
 
-**Email**
+**Email: Review and Interview Questions**
 
-[![mail-2.png](https://i.postimg.cc/hGpcgJfn/mail-2.png)](https://postimg.cc/kV6kvgQY)
+[![Resume-Sage-redefined-prompt.png](https://i.postimg.cc/HntPVxmX/Resume-Sage-redefined-prompt.png)](https://postimg.cc/5Q6mrf62)
 
 **LocalStack S3 Bucket Snapshot**
 

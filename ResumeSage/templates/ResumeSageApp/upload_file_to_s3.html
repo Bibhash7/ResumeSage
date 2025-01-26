@@ -76,6 +76,12 @@
 </div>
 
 <script>
+    // Get CSRF token from cookie
+    function getCSRFToken() {
+        const csrfToken = document.cookie.match(/csrftoken=([\w-]+)/);
+        return csrfToken ? csrfToken[1] : null;
+    }
+
     async function uploadFile() {
         const fileInput = document.getElementById('fileInput');
         const file = fileInput.files[0];
@@ -86,11 +92,20 @@
             return;
         }
 
+        const csrfToken = getCSRFToken();
+        if (!csrfToken) {
+            statusDiv.innerText = "CSRF token not found.";
+            return;
+        }
+
         try {
             // Step 1: Get the presigned URL
             const response = await fetch('/generate-upload-url/', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken // Add CSRF token to the headers
+                },
                 body: JSON.stringify({ file_name: file.name })
             });
 
@@ -129,6 +144,7 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'X-CSRFToken': csrfToken // Add CSRF token here as well
                     },
                     body: JSON.stringify({ file_name: file.name }) // You can pass additional data here if necessary
                 });

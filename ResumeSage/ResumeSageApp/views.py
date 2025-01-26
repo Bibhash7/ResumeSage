@@ -8,6 +8,7 @@ from .models import LoggedUser
 from django.http import JsonResponse
 from utils import s3_file_upload_download as s3_operations
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.cache import cache_page
 
 logging.basicConfig(
     filename= os.environ.get("SERVER_LOG"),
@@ -17,6 +18,7 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
+@cache_page(60 * 15)
 def sign_up(request):
     """
     API for user sign up.
@@ -64,7 +66,7 @@ def sign_up(request):
                 template_name="ResumeSageApp/internal_server_error.html",
                 status=500
             )
-
+@cache_page(60 * 15)
 def sign_in(request):
     """
     API for user sign in.
@@ -127,7 +129,7 @@ def sign_in(request):
             template_name="ResumeSageApp/internal_server_error.html",
             status=500
         )
-
+@cache_page(60 * 15)
 def sign_out(request):
     """
     API for sign out a session.
@@ -149,7 +151,7 @@ def sign_out(request):
             template_name="ResumeSageApp/internal_server_error.html",
             status=500
         )
-
+@cache_page(60 * 15)
 def home(request):
     """
     API for home page.
@@ -169,7 +171,7 @@ def home(request):
             template_name="ResumeSageApp/internal_server_error.html",
             status=500
         )
-
+@cache_page(60 * 15)
 def handle_unknown_routes(request):
     """
     API to handle unknown routes.
@@ -189,7 +191,7 @@ def handle_unknown_routes(request):
             template_name="ResumeSageApp/internal_server_error.html",
             status=500
         )
-@csrf_exempt
+
 def upload_file_to_s3(request):
     if request.method == 'POST':
         try:
@@ -237,7 +239,6 @@ def llm_review(request):
         )
     except Exception as error:
         logger.error(error)
-        print(error)
         return render(
             request,
             template_name="ResumeSageApp/internal_server_error.html",

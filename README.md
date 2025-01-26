@@ -1,7 +1,7 @@
 # ResumeSage: Resume Reviewer with AI-Powered Insights
 
 ## Overview
-This project is an AI-driven Resume Reviewer built using Django and Celery, leveraging Ollama for intelligent resume analysis. The application securely uploads resumes to an S3 bucket, reads and processes their content, and sends the review results directly to the user’s email. The user authentication is managed through PostgreSQL, and asynchronous task management is powered by Celery with AWS LocalStack SQS as the message broker. The application also securely fetches database credentials from AWS Secrets Manager to ensure the security of sensitive information and provides a score based on the structure, format, and professionalism of the resume.
+This project is an AI-driven Resume Reviewer built using Django and Celery, leveraging Ollama for intelligent resume analysis. The application securely uploads resumes to an S3 bucket, reads and processes their content, and sends the review results directly to the user’s email. The user authentication is managed through PostgreSQL, and asynchronous task management is powered by Celery with AWS LocalStack SQS as the message broker. The application also securely fetches database credentials from AWS Secrets Manager to ensure the security of sensitive information and provides a score based on the structure, format, and professionalism of the resume. Also based on the resume, it will generate 10 interview questions.
 
 This application offers seamless integration between cutting-edge AI and modern backend technologies, ensuring a smooth and efficient user experience.
 
@@ -10,8 +10,9 @@ This application offers seamless integration between cutting-edge AI and modern 
 
 ## Features
 
-- **AI-Powered Resume Analysis and Scoring**
+- **AI-Powered Resume Analysis, Scoring and Interview Questions**
   - Utilizes Ollama Gemma2 LLM for reviewing and analyzing resumes to provide insightful feedback and overall score.
+  - **Upd**: It also generate 10 sample interview questions based on the resume.
 
 - **Secure File Handling**
   - Resumes are securely uploaded to an Aws Localstack S3 bucket via presigned url for processing.
@@ -48,9 +49,9 @@ https://github.com/user-attachments/assets/f350657c-3495-4e35-abdf-f3b1cd0ad505
 
 [![Review-Screen.png](https://i.postimg.cc/0NQS6RPm/Review-Screen.png)](https://postimg.cc/QF2CPzBx)
 
-**Email**
+**Email: Review and Interview Questions**
 
-[![mail-2.png](https://i.postimg.cc/hGpcgJfn/mail-2.png)](https://postimg.cc/kV6kvgQY)
+[![Resume-Sage-redefined-prompt.png](https://i.postimg.cc/HntPVxmX/Resume-Sage-redefined-prompt.png)](https://postimg.cc/5Q6mrf62)
 
 **LocalStack S3 Bucket Snapshot**
 
